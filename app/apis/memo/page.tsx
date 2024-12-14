@@ -35,27 +35,27 @@ export default function Parent() {
     console.log('parent component');
 
     return (
-        <div className="p-4 space-y-4 space-x-4">
-            <div className="flex flex-col space-y-4">
+        <div>
+            <div className="w-full max-w-xs mx-auto mt-8 flex flex-col space-y-4">
                 <button
                     onClick={() => setCount(c => c + 1)}
-                    className="px-4 py-2 w-32 bg-blue-500 text-white rounded"
+                    className="px-4 py-2 bg-blue-500 text-white rounded"
                 >
                     {count}
                 </button>
                 <button
                     onClick={() => setName(name === 'David' ? 'Jack' : 'David')}
-                    className="px-4 py-2 w-32 bg-green-500 text-white rounded"
+                    className="px-4 py-2 bg-green-500 text-white rounded"
                 >
                     {name}
                 </button>
                 <NormalChild name={name} />
                 <MemoChild name={name} />
-
-
-                {/*remove the following code, this is for the usage guide section*/}
-                <MemoUsageGuideSection steps={UsageGuide.steps} links={UsageGuide.links} />
             </div>
+
+
+            {/*remove the following code, this is for the usage guide section*/}
+            <MemoUsageGuideSection steps={UsageGuide.steps} links={UsageGuide.links} />
         </div>
     );
 }
