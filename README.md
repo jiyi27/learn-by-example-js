@@ -1,22 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Project Setup Guide
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/getting-started) and uses [shadcn/ui](https://ui.shadcn.com/) for UI components.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (version 16.14 or higher)
+- [pnpm](https://pnpm.io/) (recommended package manager)
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone <your-repository-url>
+cd <project-directory>
+```
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+3. Initialize shadcn/ui:
+
+```bash
+pnpm dlx shadcn@latest init
+```
+
+When prompted, select the components you want to install.
+
+```bash
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › Yes
+```
+
+We use card component in this project, so you can add it by running:
+
+```bash
+$ pnpm dlx shadcn@latest add card
+```
+
+4. Run the development server:
+
+```bash
 pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Learn More
 
