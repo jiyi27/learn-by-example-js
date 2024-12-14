@@ -1,22 +1,30 @@
-// import Link from "next/link";
-
 'use client';
 
 import React, { useState } from 'react';
 
 
-const Child = ({ name }: { name: string }) => {
-    console.log('child component');
+const NormalChild = ({ name }: { name: string }) => {
+    console.log('normal child is rendering');
     
     return (
         <div className="p-4 border rounded bg-gray-100">
-            <p>child component, props value is: {name}</p>
+            <p>Normal child, props value is: {name}</p>
         </div>
     );
 };
 
+const child = ({ name }: { name: string }) => {
+    console.log('memo child is rendering');
+
+    return (
+        <div className="p-4 border rounded bg-gray-100">
+            <p>Memo child, props value is: {name}</p>
+        </div>
+    );
+}
+
 // use memo
-const MemoChild = React.memo(Child);
+const MemoChild = React.memo(child);
 
 export default function Parent() {
     const [count, setCount] = useState(0);
@@ -39,6 +47,7 @@ export default function Parent() {
                 >
                     {name}
                 </button>
+                <NormalChild name={name} />
                 <MemoChild name={name} />
             </div>
         </div>
