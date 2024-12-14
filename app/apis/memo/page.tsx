@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import UsageGuideSection from "@/app/_components/UsageGuideSection";
+import UsageGuide from "@/app/apis/memo/data";
 
 
 const NormalChild = ({ name }: { name: string }) => {
@@ -49,6 +51,7 @@ export default function Parent() {
                 </button>
                 <NormalChild name={name} />
                 <MemoChild name={name} />
+                <UsageGuideSection steps={UsageGuide.steps} links={UsageGuide.links} />
             </div>
         </div>
     );
