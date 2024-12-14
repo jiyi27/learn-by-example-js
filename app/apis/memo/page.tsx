@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import UsageGuideSection from "@/app/_components/UsageGuideSection";
+import MemoUsageGuideSection from "@/app/_components/UsageGuideSection";
 import UsageGuide from "@/app/apis/memo/data";
 
 
@@ -51,7 +51,10 @@ export default function Parent() {
                 </button>
                 <NormalChild name={name} />
                 <MemoChild name={name} />
-                <UsageGuideSection steps={UsageGuide.steps} links={UsageGuide.links} />
+
+
+                {/*remove the following code, this is for the usage guide section*/}
+                <MemoUsageGuideSection steps={UsageGuide.steps} links={UsageGuide.links} />
             </div>
         </div>
     );

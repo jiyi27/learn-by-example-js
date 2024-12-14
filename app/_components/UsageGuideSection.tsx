@@ -72,4 +72,6 @@ const UsageGuideSection = ({ steps, links, title }: UsageGuideProps) => {
     );
 };
 
-export default UsageGuideSection;
+const MemoUsageGuideSection = React.memo(UsageGuideSection);
+
+export default MemoUsageGuideSection;
